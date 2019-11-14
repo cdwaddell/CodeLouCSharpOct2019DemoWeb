@@ -1,0 +1,49 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div style="color: green">@ViewData["Message"]</div>
+<div style="color: red">@Html.ValidationSummary()</div>
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(x => x.FirstName)
+        @Html.TextBoxFor(x => x.FirstName)
+        @Html.ValidationMessageFor(x =>x.FirstName)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.LastName)
+        @Html.TextBoxFor(x => x.LastName)
+        @Html.ValidationMessageFor(x => x.LastName)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.StudentId)
+        @Html.TextBoxFor(x => x.StudentId)
+        @Html.ValidationMessageFor(x => x.StudentId)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.ClassName)
+        @Html.TextBoxFor(x => x.ClassName)
+        @Html.ValidationMessageFor(x => x.ClassName)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.LastClassCompleted)
+        @Html.TextBoxFor(x => x.LastClassCompleted)
+        @Html.ValidationMessageFor(x => x.LastClassCompleted)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.LastClassCompletedOn)
+        @Html.TextBoxFor(x => x.LastClassCompletedOn)
+        @Html.ValidationMessageFor(x => x.LastClassCompletedOn)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.StartDate)
+        @Html.TextBoxFor(x => x.StartDate)
+        @Html.ValidationMessageFor(x => x.StartDate)
+    </div>
+
+    <input type="submit" value="Save" />
+}
